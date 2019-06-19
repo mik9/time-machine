@@ -1,0 +1,24 @@
+[global]
+server role = standalone server
+rpc_server:mdssvc = embedded
+passdb backend = tdbsam
+obey pam restrictions = yes
+unix password sync = yes
+security = user
+printcap name = /dev/null #this works around non-loadable printers
+load printers = no
+fruit:model = MacPro
+
+[Time Capsule]
+fruit:aapl = yes
+fruit:time machine = yes
+# Time Machine size limit
+# does not works
+#fruit:time machine max size = 1T
+path = /data/TimeMachine/
+valid users = %$(USERNAME)
+writable = yes
+kernel oplocks = no
+kernel share modes = no
+posix locking = no
+vfs objects = catia fruit streams_xattr
